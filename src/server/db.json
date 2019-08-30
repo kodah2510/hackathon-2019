@@ -3,7 +3,11 @@
     {
       "id": 1,
       "firstName": "Brian",
-      "lastName": "Jones"
+      "lastName": "Jones",
+      "notifications":{
+        "freq":"never",
+        "type":"all"
+      }
     }
   ],
   "cards": [
