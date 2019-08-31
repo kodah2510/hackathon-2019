@@ -1,25 +1,30 @@
 import React from "react";
-import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Route, Link, Switch } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
+// import './MainScreen.css';
 import MainScreen from './MainScreen.js';
 
 import Home from "./routes/home.js";
 import Settings from "./routes/settings.js"
 
-function App() {
+function App(props) {
   return (
     <Router>
-      <div>
-        <Header/>
-        <Route exact path="/" component={Mainscreen} />
-        <Route path="/settings" component={Settings} />
+      <div className="App">
+          <Header />
+          <Switch>
+            <Route exact path="/" component={MainScreen} />
+            <Route path="/settings" component={Settings} />
+            </Switch>
+            <div>{props.children}</div>
       </div>
     </Router>
   );
 }
-function Header() {
+function Header(props) {
   return (
+    <div>
     <ul>
       <li>
         <Link to="/">Home</Link>
@@ -27,8 +32,8 @@ function Header() {
       <li>
         <Link to="/settings">Settings</Link>
       </li>
-    </ul>
-
+  </ul>
+</div>
   );
 }
 export default App;
