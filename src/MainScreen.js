@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import './MainScreen.css';
+import './css/MainScreen.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
@@ -71,13 +71,13 @@ function MainScreen(props) {
     }
 
     return (
-        <div className="main-screen">
+          <div className="main-screen">
             <header>Welcome to My App</header>
             <hr />
             <h2>Subjects</h2>
             {
                 subjectState.subjects.map((subject) => {
-                   return <Subject name={subject.name} numCards={subject.numCards} />;
+                   return (<Subject name={subject.name} numCards={subject.numCards} />);
                 })
             }
             <div className="add-section" onClick={showModal}>
@@ -91,7 +91,7 @@ function MainScreen(props) {
             >
                 <form className="modal-form">
                     <div className="modal-form-group">
-                        <input className="custom-textbox" type="text" name="subjectName" value={inputState.value} onChange={handleInputChange} placeHolder="Enter your subject name"></input>
+                        <input className="custom-textbox" type="text" name="subjectName" value={inputState.value} onChange={handleInputChange} placeholder="Enter your subject name"></input>
                     </div>
                     <div className="modal-form-button-group">
                         <input className="custom-button" type="button" value="Create" onClick={addSubject}></input>
@@ -99,7 +99,7 @@ function MainScreen(props) {
                     </div>
                 </form>
             </Modal>
-        </div>
+            </div>
     );
 }
 
