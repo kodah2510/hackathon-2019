@@ -1,12 +1,21 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 import '../css/settings.css';
 class Settings extends React.Component {
+  constructor(props) {
+    super(props)
+    this.saveSettings = this.saveSettings.bind(this);
+  }
+   saveSettings(e){
+    e.preventDefault();
+    console.log(this);
+  }
+
   render() {
     return(
       <div className="settings">
         <nav className="titleBar">
-          <h1>Flash Card App</h1>
-          <h2>Settings</h2>
+          <h1>Settings</h1>
         </nav>
         <section className="settings__inputs">
           <label for="frequency">
@@ -27,7 +36,7 @@ class Settings extends React.Component {
             <option value="tip">Tip</option>
             <option value="t/f">True/Falses</option>
           </select>
-          <button type="button" id="saveSettings">Save Settings</button>
+          <button type="button" id="save" onClick={this.saveSettings}><Link className="saveButton" to="/">Save Settings</Link></button>
         </section>
       </div>
     );
