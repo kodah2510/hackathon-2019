@@ -1,6 +1,12 @@
 import React from "react";
-function Settings() {
-  return <h2>Settings</h2>;
+class Settings extends React.Component {
+  render() {
+    return(
+      <div>
+        <nav className="titleBar"
+      </div>
+    );
+  }
 }
 
 export default Settings;
