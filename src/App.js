@@ -5,6 +5,7 @@ import './App.css';
 
 import Home from "./routes/home.js";
 import Settings from "./routes/settings.js"
+import AddCard from "./routes/addcard.js"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Header/>
         <Route exact path="/" component={Home} />
         <Route path="/settings" component={Settings} />
+        <Route path="/addcard" component={AddCard}/>
       </div>
     </Router>
   );
@@ -25,6 +27,9 @@ function Header() {
       </li>
       <li>
         <Link to="/settings">Settings</Link>
+      </li>
+      <li>
+        <Link to="/addcard">Add Card</Link>
       </li>
     </ul>
   );

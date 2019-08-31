@@ -3,6 +3,7 @@
   background-color: #fff;
   width: 100%;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  margin-bottom: 1rem;
 }
 
 .titleBar h1 {
@@ -11,26 +12,19 @@
   padding: 0.5rem;
 }
 
-.settings {
+.addCard {
   max-width: 720px;
   margin: 0 auto;
   border: 1px solid grey;
   min-height: 500px;
 }
 
-.settings__inputs {
-  width: 50%;
+.addCard__inputs {
+  width: 25%;
   margin: 0 auto;
 }
 
-.settings__inputs * {
+.addCard__inputs * {
   display: block;
   margin-top: 1rem;
-}
-
-.saveButton {
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  color: black;
 }
