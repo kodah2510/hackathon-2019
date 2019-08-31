@@ -4,13 +4,21 @@ import './css/MainScreen.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import AddCard from './routes/addcard.js'
+import { Link } from 'react-router-dom'
 
-function Subject(props) {
+function Subject(props) { 
+    const handleClick = (event) => {
+    
+    }
+
     return (
-        <div className="subject">
+        <Link to={{
+            pathname: '/cardscreen'
+            }} className="subject" onClick={handleClick} >
             <div className="subject-title">{props.name}</div>
             <div className="num-cards">{props.numCards}</div>
-        </div>
+        </Link>
     );
 }
 
@@ -58,7 +66,7 @@ function MainScreen(props) {
             marginRight           : '-50%',
             transform             : 'translate(-50%, -50%)',
             borderRadius          : '10px',
-            width: '300px'
+            width: '300px',
         }
     };
 
@@ -72,9 +80,13 @@ function MainScreen(props) {
 
     return (
           <div className="main-screen">
-            <header>Welcome to My App</header>
+              <header className="header-text">Welcome to</header>
+              <img className="logo-img" src={process.env.PUBLIC_URL + '/flash.svg'} />
+                <h3 className="logo-name">Flashy</h3>
             <hr />
-            <h2>Subjects</h2>
+            <div className="subject-section">
+                Subjects
+            </div>
             {
                 subjectState.subjects.map((subject) => {
                    return (<Subject name={subject.name} numCards={subject.numCards} />);

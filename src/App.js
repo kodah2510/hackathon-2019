@@ -8,18 +8,19 @@ import MainScreen from './MainScreen.js';
 import Home from "./routes/home.js";
 import Settings from "./routes/settings.js"
 import AddCard from "./routes/addcard.js"
+import CardScreen from './CardScreen.js'
 
 function App(props) {
   return (
     <Router>
-      <div>
-        <Header/>
+      <div className="App">
         <Route exact path="/" component={MainScreen} />
         <Route path="/settings" component={Settings} />
         <Route path="/addcard" component={AddCard}/>
+        <Route path="/cardscreen" component={CardScreen} />
+        {props.children}
       </div>
     </Router>
-
   );
 }
 function Header(props) {
@@ -35,7 +36,6 @@ function Header(props) {
       <li>
         <Link to="/addcard">Add Card</Link>
       </li>
-    </ul>
   </ul>
 </div>
   );

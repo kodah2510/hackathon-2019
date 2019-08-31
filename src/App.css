@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background-image: linear-gradient(#6cab9d, #243f78);
+  font-family: 'Roboto', sans-serif;
 }
 /*
 .App-logo {
